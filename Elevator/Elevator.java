@@ -9,7 +9,7 @@ public class Elevator implements ElevatorState{
 	private ElevatorState thirdFloor;
 	private ElevatorState move;
 	private ElevatorState state;
-	
+
 	public Elevator(){
 		this.firstFloor = new ElevatorFloorOne(this);
 		this.secondFloor = new ElevatorFloorTwo(this);
@@ -17,15 +17,15 @@ public class Elevator implements ElevatorState{
 
 		this.state = firstFloor;
 	}
-	
+
 	public void setElevatorState(ElevatorState state){
 		this.state = state;
 	}
-	
+
 	@Override
 	public void press1() {
 		state.press1();
-		//setState(getElevatorClose());
+		//setState();
 	}
 
 	@Override

@@ -14,6 +14,7 @@ public class ElevatorFloorTwo implements ElevatorState{
 		// TODO Auto-generated method stub
 		System.out.println("1 pressed...at floor two ");
 		elevator.setElevatorState(elevator.getElevatorFirstFloor());
+		System.out.println("*ding* The elevator arrives at Floor 1");
 	}
 
 	@Override
@@ -28,6 +29,7 @@ public class ElevatorFloorTwo implements ElevatorState{
 		// TODO Auto-generated method stub
 		System.out.println("3 pressed...at floor two ");
 		elevator.setElevatorState(elevator.getElevatorThirdFloor());
+		   System.out.println("*ding* The elevator arrives at Floor 3");
 	}
 
 }

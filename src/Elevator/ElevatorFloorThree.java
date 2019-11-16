@@ -1,15 +1,14 @@
 package Elevator;
 import Mediator.Button;
 
+
 public class ElevatorFloorThree implements ElevatorState{
 
 	Elevator elevator;
-
 	public ElevatorFloorThree(Elevator elevator)
 	{
 		this.elevator = elevator;
 	}
-
 
 	@Override
 	public void press1() {
@@ -43,7 +42,6 @@ public class ElevatorFloorThree implements ElevatorState{
 		elevator.getButton().pressClose();
 		System.out.println("Nothing happens");
 	    elevator.setElevatorState(elevator.getElevatorThirdFloor());
-
 	}
 
 }

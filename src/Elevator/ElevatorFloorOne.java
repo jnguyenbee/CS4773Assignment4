@@ -45,5 +45,4 @@ public class ElevatorFloorOne implements ElevatorState{
 
 		elevator.setElevatorState(elevator.getElevatorThirdFloor());
 	}
-
 }

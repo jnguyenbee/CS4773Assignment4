@@ -1,3 +1,4 @@
+
 package Elevator;
 
 import Mediator.Button;
@@ -27,19 +28,13 @@ public class Elevator implements ElevatorState{
 		return firstFloor;
 	}
 
-
 	public ElevatorState getElevatorSecondFloor() {
 		return secondFloor;
 	}
-
-
-
+  
 	public ElevatorState getElevatorThirdFloor() {
 		return thirdFloor;
 	}
-
-	
-
 	public ElevatorState getState() {
 		return state;
 	}

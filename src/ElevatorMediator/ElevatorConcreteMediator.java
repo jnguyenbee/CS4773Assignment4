@@ -24,6 +24,4 @@ public class ElevatorConcreteMediator implements ElevatorMediator{
 
 	}
 
-
-
 }

@@ -1,5 +1,6 @@
 package Elevator;
 
+import Mediator.Button;
 
 public class Main {
 
@@ -7,9 +8,13 @@ public class Main {
 		Elevator elevator = new Elevator();
 		
 		elevator.press2();
-		//elevator.press1();
-		//elevator.press3();
-		//elevator.press3();
-		//elevator.press1();
+		elevator.press1();
+		elevator.press3();
+		elevator.press3();
+		elevator.press1();
+		elevator.press1();
+		elevator.press2();
+		elevator.press1();
+		elevator.press3();
 	}
 }

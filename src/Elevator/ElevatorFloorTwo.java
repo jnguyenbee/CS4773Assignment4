@@ -1,30 +1,33 @@
 package Elevator;
 
-import ElevatorMediator.ElevatorMediator;
+import Mediator.Button;
 
 public class ElevatorFloorTwo implements ElevatorState{
-	
+
 	Elevator elevator;
-	Boolean currentfloor;
-	private ElevatorMediator mediator;
-	
+
 	public ElevatorFloorTwo(Elevator elevator)
 	{
 		this.elevator = elevator;
-		this.setCurrentfloor(Boolean.TRUE);
 	}
-	
+
 	@Override
 	public void press1() {
 		// TODO Auto-generated method stub
-		System.out.println("1 pressed...at floor two ");
-		elevator.setElevatorState(elevator.getElevatorFirstFloor());
+		System.out.println("1 pressed ");
+		elevator.getButton().pressClose();
+		System.out.println("Going Down");
 		System.out.println("*ding* The elevator arrives at Floor 1");
+		System.out.println("Doors are opened");		
+		elevator.getButton().pressOpen();
+
+		elevator.setElevatorState(elevator.getElevatorFirstFloor());
 	}
 
 	@Override
 	public void press2() {
-		// TODO Auto-generated method stub
+		System.out.println("2 pressed ");
+		elevator.getButton().pressClose();
 		System.out.println("Nothing happens");
 	    elevator.setElevatorState(elevator.getElevatorSecondFloor());
 	}
@@ -32,17 +35,14 @@ public class ElevatorFloorTwo implements ElevatorState{
 	@Override
 	public void press3() {
 		// TODO Auto-generated method stub
-		System.out.println("3 pressed...at floor two ");
-		elevator.setElevatorState(elevator.getElevatorThirdFloor());
-		   System.out.println("*ding* The elevator arrives at Floor 3");
-	}
-	
-	public Boolean getCurrentfloor() {
-		return currentfloor;
-	}
+		System.out.println("3 pressed ");
+		elevator.getButton().pressClose();
+		System.out.println("Going Up");
+		System.out.println("*ding* The elevator arrives at Floor 3");
+		System.out.println("Doors are opened");
+		elevator.getButton().pressOpen();
 
-	public void setCurrentfloor(Boolean currentfloor) {
-		this.currentfloor = currentfloor;
+		elevator.setElevatorState(elevator.getElevatorThirdFloor());
 	}
 
 }

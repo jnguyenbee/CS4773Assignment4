@@ -1,71 +1,67 @@
 
+package Elevator;
 
+import Mediator.Button;
 
 public class Elevator implements ElevatorState{
 
-
-	private ElevatorState firstFloor;
-	private ElevatorState secondFloor;
-	private ElevatorState thirdFloor;
 	private ElevatorState state;
-	
+	private ElevatorFloorOne firstFloor;
+	private ElevatorFloorTwo secondFloor;
+	private ElevatorFloorThree thirdFloor;
+	private Button button;
+
 	public Elevator(){
-		this.setElevatorFirstFloor(new ElevatorFloorOne(this));
-		this.setElevatorSecondFloor(new ElevatorFloorTwo(this));
-		this.setElevatorThirdFloor(new ElevatorFloorThree(this));
-		
+		this.firstFloor = new ElevatorFloorOne(this);
+		this.secondFloor = new ElevatorFloorTwo(this);
+		this.thirdFloor = new ElevatorFloorThree(this);
+
 		this.state = firstFloor;
+		this.button = new Button();
 	}
-	
-	public void setElevatorState(ElevatorState state){
-		this.state = state;
+
+	public void setElevatorState(ElevatorState newElevatorState){
+		state = newElevatorState;
 	}
-	
+
+	public ElevatorState getElevatorFirstFloor() {
+		return firstFloor;
+	}
+
+	public ElevatorState getElevatorSecondFloor() {
+		return secondFloor;
+	}
+  
+	public ElevatorState getElevatorThirdFloor() {
+		return thirdFloor;
+	}
+	public ElevatorState getState() {
+		return state;
+	}
+
+	public void setState(ElevatorState newElevatorState) {
+		this.state = newElevatorState;
+	}
+
 	@Override
 	public void press1() {
+		
 		state.press1();
 	}
 
 	@Override
 	public void press2() {
 		state.press2();
+		
 	}
-
+	
 	@Override
 	public void press3() {
 		state.press3();
 	}
 
-	public ElevatorState getElevatorFirstFloor() {		
-		return firstFloor;
-	}
-
-	public void setElevatorFirstFloor(ElevatorState elevator) {
-		this.firstFloor = elevator;
-	}
-
-	public ElevatorState getElevatorSecondFloor() {
-		return secondFloor;
-	}
-
-	public void setElevatorSecondFloor(ElevatorState elevator) {
-		this.secondFloor= elevator;
-	}
-
-	public ElevatorState getElevatorThirdFloor() {
-		return thirdFloor;
-	}
-
-	public void setElevatorThirdFloor(ElevatorState elevator) {
-		this.thirdFloor = elevator;
-	}
-
-	public ElevatorState getState() {
-		return state;
-	}
-
-	public void setState(ElevatorState state) {
-		this.state = state;
+	public Button getButton() {
+		return this.button;
 	}
 
 }
